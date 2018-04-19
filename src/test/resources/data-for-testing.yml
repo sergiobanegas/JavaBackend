@@ -1,0 +1,63 @@
+userList:
+  - &user1
+    email: "test1@test.com"
+    password: "1234"
+    name: "Test1"
+    gender: "MALE"
+    avatar: "avatar.png"
+    enabled: true
+    language: ES
+    createdAt: 2010-02-11 11:02:57
+    updatedAt: 2010-02-11 11:02:57
+  - &user2
+    email: "test2@test.com"
+    password: "1234"
+    name: "Test2"
+    gender: "FEMALE"
+    avatar: "avatar.png"
+    enabled: true
+    createdAt: 2010-02-11 11:02:57
+    updatedAt: 2010-02-11 11:02:57
+  - &user3
+    email: "test3@test.com"
+    password: "1234"
+    name: "Test3"
+    gender: "MALE"
+    avatar: "avatar.png"
+    enabled: true
+    createdAt: 2010-02-11 11:02:57
+    updatedAt: 2010-02-11 11:02:57
+  - &user4
+    email: "test4@test.com"
+    password: "1234"
+    name: "Test4"
+    gender: "FEMALE"
+    avatar: "avatar.png"
+    enabled: false
+    createdAt: 2010-02-11 11:02:57
+    updatedAt: 2010-02-11 11:02:57
+    
+commentList:
+  - &comment1
+    author: *user1
+    content: "Comment 1"
+    createdAt: 2010-02-11 11:02:57
+    updatedAt: 2010-02-11 11:02:57
+  - &comment2
+    author: *user2
+    content: "Comment 2"
+    createdAt: 2010-02-11 11:02:57
+    updatedAt: 2010-02-11 11:02:57
+  - &comment3
+    author: *user2
+    content: "Comment 3"
+    createdAt: 2010-02-11 11:02:57
+    updatedAt: 2010-02-11 11:02:57
+  - &comment4
+    author: *user3
+    content: "Comment 4"
+    replies:
+      - *comment1
+      - *comment2
+    createdAt: 2010-02-11 11:02:57
+    updatedAt: 2010-02-11 11:02:57

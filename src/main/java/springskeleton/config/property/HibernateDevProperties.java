@@ -1,0 +1,12 @@
+package springskeleton.config.property;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
+
+@ConfigurationProperties("hibernate")
+@Profile("dev")
+@Component
+public class HibernateDevProperties extends HibernateProperties {
+
+}

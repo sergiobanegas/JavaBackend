@@ -1,0 +1,84 @@
+app:
+  name: Spring skeleton
+
+hibernate:
+  charSet: UTF-8
+  show_sql: false
+  format_sql: true
+  hbm2ddl_auto: update
+  dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+spring:
+  profiles.default: dev
+  datasource:
+    driver: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springskeleton?useSSL=false
+    username: root
+    password: admin
+  jpa:
+    hibernate.ddl-auto: update
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+  mail:
+    protocol: smtp
+    host: smtp.gmail.com
+    port: 587
+    username: perseuscontact@gmail.com
+    password: ENC(h3UIuB0AkTgQiT9BPSu+igNumGZCqIbD)
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+  thymeleaf:
+    check-template: true
+    check-template-location: true
+    enabled: true
+    prefix: classpath:/template/
+    suffix: .html
+    encoding: UTF-8
+    content-type: text/html
+  batch:
+    job.enabled: false
+    delays:
+      daily: 0 0 0 * * *
+
+jasypt.encryptor:
+  algorithm: PBEWithMD5AndDES
+  keyObtentionIterations: 1000
+  poolSize: 1
+  saltGeneratorClassname: org.jasypt.salt.RandomSaltGenerator
+  stringOutputType: base64     
+     
+jwt:
+  secret: abgir4h9e3Kcvgtlu5AM
+  cookie_name: AUTHORIZATION
+  user_info_cookie_name: USER_INFO
+  roles_claim: ROLES
+  language_claim: LANGUAGE
+  remember_claim: REMEMBER
+  
+cookies:
+  default_max_age: 31536000
+  default_path: /
+
+logging.config: src/main/resources/log4j2.xml  
+
+test.datasource:
+  driver: org.h2.Driver
+  url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+  username: sa
+  password: sa
+    
+test.hibernate:
+  charSet: UTF-8
+  show_sql: false
+  format_sql: true
+  hbm2ddl_auto: create
+  dialect: org.hibernate.dialect.H2Dialect
+
+server:
+  context-path: /api
+
+admin:
+  email: admin@gmail.com
+  password: admin
+  name: admin
+  gender: FEMALE
